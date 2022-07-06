@@ -40,12 +40,6 @@ services:
     ports:
       - "${DEEPHAVEN_PORT:-10000}:10000"
 
-  examples:
-    image: ghcr.io/deephaven/examples
-    volumes:
-      - ./data:/data
-    command: initialize
-
   redpanda:
     command:
     - redpanda

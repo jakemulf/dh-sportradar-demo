@@ -1,0 +1,84 @@
+version: "3.4"
+
+services:
+  server:
+    image: ghcr.io/deephaven/server:0.14.0
+    expose:
+      - '8080'
+    volumes:
+      - ./data:/data
+      - api-cache:/cache
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xmx4g -Ddeephaven.console.type=python -Ddeephaven.application.dir=/data/app.d
+      - TOPIC_NAME=${TOPIC_NAME}
+      - KAFKA_SERVER=${KAFKA_SERVER}
+      - REDPANDA_SERVER=${REDPANDA_SERVER}
+
+  web:
+    image: ghcr.io/deephaven/web:0.14.0
+    expose:
+      - '80'
+    volumes:
+      - ./data:/data
+      - web-tmp:/tmp
+
+  grpc-proxy:
+    image: ghcr.io/deephaven/grpc-proxy:0.14.0
+    environment:
+      - BACKEND_ADDR=server:8080
+    depends_on:
+      - server
+    expose:
+      - '8080'
+
+  envoy:
+    image: ghcr.io/deephaven/envoy:0.14.0
+    depends_on:
+      - web
+      - grpc-proxy
+      - server
+    ports:
+      - "${DEEPHAVEN_PORT:-10000}:10000"
+
+  examples:
+    image: ghcr.io/deephaven/examples
+    volumes:
+      - ./data:/data
+    command: initialize
+
+  redpanda:
+    command:
+    - redpanda
+    - start
+    - --smp
+    - '1'
+    - --reserve-memory
+    - 0M
+    - --overprovisioned
+    - --node-id
+    - '0'
+    - --kafka-addr
+    - PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092
+    - --advertise-kafka-addr
+    - PLAINTEXT://redpanda:29092,OUTSIDE://localhost:9092
+    image: docker.vectorized.io/vectorized/redpanda:v21.4.13
+    ports:
+    - 9092:9092
+    - 29092:29092
+
+  registry:
+    image: apicurio/apicurio-registry-mem:1.2.2.Final
+    expose:
+      - 8080
+    ports:
+      - "8081:8080"
+    environment:
+      QUARKUS_PROFILE: prod
+      KAFKA_BOOTSTRAP_SERVERS: redpanda:9092
+      APPLICATION_ID: registry_id
+      APPLICATION_SERVER: localhost:9000
+
+volumes:
+    web-tmp:
+    api-cache:
+      

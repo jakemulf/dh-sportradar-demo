@@ -6,7 +6,7 @@ This sample app shows how to collect data from https://developer.sportradar.com/
 
 * `./data/app.d/`: The Deephaven app mode directory
   * `./data/app.d/webhook_feed.py`: The Python script to setup the webhook feed
-  * `./data/app.d/historical_data_feed.py`: The Python script to setup pulling and parsing historical data
+  * `./data/app.d/historical_data_parser.py`: The Python script to setup pulling and parsing historical data
   * `./data/app.d/app.app`: The Deephaven app mode config file
 * `./data/sample_json/`: Sample JSON files from the SportRadar API to work with without making API requests
 * `./data/notebooks/`: Various Python scripts to work more with the data from SportRadar

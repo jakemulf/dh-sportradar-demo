@@ -1,0 +1,661 @@
+{
+    "league": {
+        "id": "2fa448bc-fc17-4d3d-be03-e60e080fdc26",
+        "name": "Major League Baseball",
+        "alias": "MLB"
+    },
+    "start_time": "2021-04-15T08:00:00+00:00",
+    "end_time": "2021-04-16T07:59:58+00:00",
+    "players": [{
+        "id": "182d02a7-c606-4a85-a635-89dd1afdac6f",
+        "status": "MIN",
+        "position": "OF",
+        "primary_position": "CF",
+        "first_name": "Lane",
+        "last_name": "Thomas",
+        "preferred_name": "Lane",
+        "jersey_number": "35",
+        "transactions": [{
+            "id": "24bf586a-de06-46c7-94f9-b613089c0e98",
+            "desc": "The St. Louis Cardinals optioned OF Lane Thomas to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T20:36:32+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Cardinals",
+                "market": "St. Louis",
+                "abbr": "STL",
+                "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+            },
+            "to_team": {
+                "name": "Cardinals",
+                "market": "St. Louis",
+                "abbr": "STL",
+                "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+            }
+        }]
+    }, {
+        "id": "fd40f395-6a36-46e5-a2e5-3eb6f3c05916",
+        "status": "MIN",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Shaun",
+        "last_name": "Anderson",
+        "preferred_name": "Shaun",
+        "jersey_number": "41",
+        "transactions": [{
+            "id": "2c06a5df-d927-4942-94ac-8053d5f518ff",
+            "desc": "The Minnesota Twins optioned RHP Shaun Anderson to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T21:14:45+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            },
+            "to_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            }
+        }, {
+            "id": "ece4ec30-bdba-45b5-ab4e-e8ba0d09ec51",
+            "desc": "The Minnesota Twins recalled RHP Shaun Anderson from the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:01:30+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            },
+            "to_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            }
+        }]
+    }, {
+        "id": "e9fe5912-636f-4ad0-a30e-b16d875fe98c",
+        "status": "FA",
+        "position": "C",
+        "primary_position": "C",
+        "first_name": "Jonathan",
+        "last_name": "Lucroy",
+        "preferred_name": "Jonathan",
+        "transactions": [{
+            "id": "33d89e1e-6e98-4b2a-a1c3-8e3db6493be2",
+            "desc": "The Washington Nationals sent C Jonathan Lucroy outright to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:16:53+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Nationals",
+                "market": "Washington",
+                "abbr": "WSH",
+                "id": "d89bed32-3aee-4407-99e3-4103641b999a"
+            },
+            "to_team": {
+                "name": "Nationals",
+                "market": "Washington",
+                "abbr": "WSH",
+                "id": "d89bed32-3aee-4407-99e3-4103641b999a"
+            }
+        }, {
+            "id": "be27caaa-6df0-48a7-8262-8be655a35482",
+            "desc": "C Jonathan Lucroy elected free agency.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T17:08:21+00:00",
+            "transaction_type": "Declared Free Agency",
+            "transaction_code": "FA",
+            "from_team": {
+                "name": "Nationals",
+                "market": "Washington",
+                "abbr": "WSH",
+                "id": "d89bed32-3aee-4407-99e3-4103641b999a"
+            }
+        }]
+    }, {
+        "id": "1a574c70-eb33-4202-ab97-548645a4d15e",
+        "status": "D10",
+        "position": "P",
+        "primary_position": "SP",
+        "first_name": "Johnny",
+        "last_name": "Cueto",
+        "preferred_name": "Johnny",
+        "jersey_number": "47",
+        "transactions": [{
+            "id": "56cdac3f-1cd5-48c2-9477-f30bfbcc1e71",
+            "desc": "The San Francisco Giants placed RHP Johnny Cueto on the 10-day injured list.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T23:35:03+00:00",
+            "transaction_type": "Placed on 10-Day Injury List",
+            "transaction_code": "IL10",
+            "from_team": {
+                "name": "Giants",
+                "market": "San Francisco",
+                "abbr": "SF",
+                "id": "a7723160-10b7-4277-a309-d8dd95a8ae65"
+            },
+            "to_team": {
+                "name": "Giants",
+                "market": "San Francisco",
+                "abbr": "SF",
+                "id": "a7723160-10b7-4277-a309-d8dd95a8ae65"
+            }
+        }]
+    }, {
+        "id": "1cd96fa8-c5f0-4e44-85a4-cc968754b3c6",
+        "status": "MIN",
+        "position": "IF",
+        "primary_position": "2B",
+        "first_name": "David",
+        "last_name": "Mayfield",
+        "preferred_name": "Jack",
+        "jersey_number": "59",
+        "transactions": [{
+            "id": "63c27ad9-978b-4737-b00d-1b921fd6cb75",
+            "desc": "The Los Angeles Angels optioned INF Jack Mayfield to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:08:40+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Angels",
+                "market": "Los Angeles",
+                "abbr": "LAA",
+                "id": "4f735188-37c8-473d-ae32-1f7e34ccf892"
+            },
+            "to_team": {
+                "name": "Angels",
+                "market": "Los Angeles",
+                "abbr": "LAA",
+                "id": "4f735188-37c8-473d-ae32-1f7e34ccf892"
+            }
+        }]
+    }, {
+        "id": "141d06a7-bef6-4d75-8bcb-7ed64be0d16e",
+        "status": "D10",
+        "position": "OF",
+        "primary_position": "RF",
+        "first_name": "Nomar",
+        "last_name": "Mazara",
+        "preferred_name": "Nomar",
+        "jersey_number": "15",
+        "transactions": [{
+            "id": "6d834c0d-e334-4c68-b8d2-3f0f54bf7a05",
+            "desc": "The Detroit Tigers placed OF Nomar Mazara on the 10-day injured list.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T21:02:01+00:00",
+            "transaction_type": "Placed on 10-Day Injury List",
+            "transaction_code": "IL10",
+            "from_team": {
+                "name": "Tigers",
+                "market": "Detroit",
+                "abbr": "DET",
+                "id": "575c19b7-4052-41c2-9f0a-1c5813d02f99"
+            },
+            "to_team": {
+                "name": "Tigers",
+                "market": "Detroit",
+                "abbr": "DET",
+                "id": "575c19b7-4052-41c2-9f0a-1c5813d02f99"
+            }
+        }]
+    }, {
+        "id": "e7fbf15a-c6d6-4d32-b191-bbafc25bb8a4",
+        "status": "MIN",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Cole",
+        "last_name": "Sulser",
+        "preferred_name": "Cole",
+        "jersey_number": "54",
+        "transactions": [{
+            "id": "7eb4ac2c-0223-4edf-812a-e6ee507246bd",
+            "desc": "The Baltimore Orioles optioned RHP Cole Sulser to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T22:31:10+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Orioles",
+                "market": "Baltimore",
+                "abbr": "BAL",
+                "id": "75729d34-bca7-4a0f-b3df-6f26c6ad3719"
+            },
+            "to_team": {
+                "name": "Orioles",
+                "market": "Baltimore",
+                "abbr": "BAL",
+                "id": "75729d34-bca7-4a0f-b3df-6f26c6ad3719"
+            }
+        }, {
+            "id": "92b1f0b4-f34e-4071-b411-5445fa0dd8e7",
+            "desc": "The Baltimore Orioles recalled RHP Cole Sulser from the minors. He will serve as the Orioles 27th player in its doubleheader against the Mariners.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T13:56:33+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Orioles",
+                "market": "Baltimore",
+                "abbr": "BAL",
+                "id": "75729d34-bca7-4a0f-b3df-6f26c6ad3719"
+            },
+            "to_team": {
+                "name": "Orioles",
+                "market": "Baltimore",
+                "abbr": "BAL",
+                "id": "75729d34-bca7-4a0f-b3df-6f26c6ad3719"
+            }
+        }]
+    }, {
+        "id": "b3b88779-b9e9-45d3-b5fa-34e552db35c2",
+        "status": "MIN",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Cody",
+        "last_name": "Stashak",
+        "preferred_name": "Cody",
+        "jersey_number": "61",
+        "transactions": [{
+            "id": "9c3762a4-05e1-4514-9263-9018b53481f9",
+            "desc": "The Minnesota Twins optioned RHP Cody Stashak to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:02:03+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            },
+            "to_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            }
+        }]
+    }, {
+        "id": "322997e4-59b5-43f8-9ef6-f8a848a9f743",
+        "status": "A",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Robert",
+        "last_name": "Dugger",
+        "preferred_name": "Robert",
+        "jersey_number": "64",
+        "transactions": [{
+            "id": "a20c8a15-ebf9-46e7-aa95-d8d7c3cd42d9",
+            "desc": "The Seattle Mariners selected RHP Robert Dugger from the minors. He will serve as the team's 27th player in its doubleheader against the Orioles.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T13:54:06+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Mariners",
+                "market": "Seattle",
+                "abbr": "SEA",
+                "id": "43a39081-52b4-4f93-ad29-da7f329ea960"
+            },
+            "to_team": {
+                "name": "Mariners",
+                "market": "Seattle",
+                "abbr": "SEA",
+                "id": "43a39081-52b4-4f93-ad29-da7f329ea960"
+            }
+        }]
+    }, {
+        "id": "6de93a68-31cd-4278-b933-e43cbcee5d98",
+        "status": "A",
+        "position": "P",
+        "primary_position": "SP",
+        "first_name": "Anthony",
+        "last_name": "Kay",
+        "preferred_name": "Anthony",
+        "jersey_number": "47",
+        "transactions": [{
+            "id": "a55efd1b-265a-4ddc-af47-124bbf469705",
+            "desc": "The Toronto Blue Jays recalled LHP Anthony Kay from the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T22:10:18+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            },
+            "to_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            }
+        }]
+    }, {
+        "id": "b9eb3ba2-e12a-43e3-9fc0-2d1efaf5ea31",
+        "status": "A",
+        "position": "OF",
+        "primary_position": "CF",
+        "first_name": "Scott",
+        "last_name": "Hurst",
+        "preferred_name": "Scott",
+        "transactions": [{
+            "id": "a5e56511-0c14-4f96-a747-206a8d1ca8be",
+            "desc": "The St. Louis Cardinals selected the contract of OF Scott Hurst.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T20:36:13+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Cardinals",
+                "market": "St. Louis",
+                "abbr": "STL",
+                "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+            },
+            "to_team": {
+                "name": "Cardinals",
+                "market": "St. Louis",
+                "abbr": "STL",
+                "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+            }
+        }]
+    }, {
+        "id": "b2fdb7e8-a700-408c-b238-a077165c4745",
+        "status": "D10",
+        "position": "P",
+        "primary_position": "SP",
+        "first_name": "Thomas",
+        "last_name": "Stripling",
+        "preferred_name": "Ross",
+        "jersey_number": "48",
+        "transactions": [{
+            "id": "a624bf69-15ad-451d-a53f-cf0ec6828156",
+            "desc": "The Toronto Blue Jays placed RHP Ross Stripling on the 10-day injured list.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T22:10:58+00:00",
+            "transaction_type": "Placed on 10-Day Injury List",
+            "transaction_code": "IL10",
+            "from_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            },
+            "to_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            }
+        }]
+    }, {
+        "id": "1e59c0b9-517b-445c-b1e3-f5821d03db7f",
+        "status": "FA",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Kevin",
+        "last_name": "Munson",
+        "preferred_name": "Kevin",
+        "transactions": [{
+            "id": "b1261a77-ce09-4321-989c-04ad2832dda3",
+            "desc": "The Seattle Mariners released RHP Kevin Munson.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T22:15:38+00:00",
+            "transaction_type": "Released",
+            "transaction_code": "REL",
+            "from_team": {
+                "name": "Mariners",
+                "market": "Seattle",
+                "abbr": "SEA",
+                "id": "43a39081-52b4-4f93-ad29-da7f329ea960"
+            }
+        }]
+    }, {
+        "id": "fd954c71-a360-41d8-846e-7faf831b6256",
+        "status": "D60",
+        "position": "P",
+        "primary_position": "SP",
+        "first_name": "Dakota",
+        "last_name": "Hudson",
+        "preferred_name": "Dakota",
+        "jersey_number": "43",
+        "transactions": [{
+            "id": "cb3fcc4a-75a5-462b-9ea8-1411b3731bf6",
+            "desc": "The St. Louis Cardinals placed RHP Dakota Hudson on the 60-day injured list.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T20:37:23+00:00",
+            "transaction_type": "Placed on 60-Day Injury List",
+            "transaction_code": "IL60",
+            "from_team": {
+                "name": "Cardinals",
+                "market": "St. Louis",
+                "abbr": "STL",
+                "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+            },
+            "to_team": {
+                "name": "Cardinals",
+                "market": "St. Louis",
+                "abbr": "STL",
+                "id": "44671792-dc02-4fdd-a5ad-f5f17edaa9d7"
+            }
+        }]
+    }, {
+        "id": "889d4e15-173d-43af-90cc-58da6c8bc759",
+        "status": "A",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Joel",
+        "last_name": "Payamps",
+        "preferred_name": "Joel",
+        "jersey_number": "54",
+        "transactions": [{
+            "id": "d589dcf8-59f9-422f-be98-120ccf3b7017",
+            "desc": "The Toronto Blue Jays recalled RHP Joel Payamps from the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T23:23:23+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            },
+            "to_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            }
+        }]
+    }, {
+        "id": "e989cf50-bd06-4617-8f76-3937f780a870",
+        "status": "DFA",
+        "position": "OF",
+        "primary_position": "LF",
+        "first_name": "Billy",
+        "last_name": "Williams",
+        "preferred_name": "Nick",
+        "transactions": [{
+            "id": "d9449464-9d25-4d95-819f-2721a18a70a9",
+            "desc": "The Chicago White Sox designated OF Nick Williams for assignment.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:48:23+00:00",
+            "transaction_type": "Designated for Assignment",
+            "transaction_code": "DFA",
+            "from_team": {
+                "name": "White Sox",
+                "market": "Chicago",
+                "abbr": "CWS",
+                "id": "47f490cd-2f58-4ef7-9dfd-2ad6ba6c1ae8"
+            },
+            "to_team": {
+                "name": "White Sox",
+                "market": "Chicago",
+                "abbr": "CWS",
+                "id": "47f490cd-2f58-4ef7-9dfd-2ad6ba6c1ae8"
+            }
+        }]
+    }, {
+        "id": "96a08412-2c2b-415f-bdb2-d5835fc3d66c",
+        "status": "D10",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Jordan",
+        "last_name": "Romano",
+        "preferred_name": "Jordan",
+        "jersey_number": "68",
+        "transactions": [{
+            "id": "dbd8a9ba-c3e0-4af2-bf98-1fb182a75b73",
+            "desc": "The Toronto Blue Jays placed RHP Jordan Romano on the 10-day injured list.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T23:22:56+00:00",
+            "transaction_type": "Placed on 10-Day Injury List",
+            "transaction_code": "IL10",
+            "from_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            },
+            "to_team": {
+                "name": "Blue Jays",
+                "market": "Toronto",
+                "abbr": "TOR",
+                "id": "1d678440-b4b1-4954-9b39-70afb3ebbcfa"
+            }
+        }]
+    }, {
+        "id": "cf579a96-a6f7-41a6-85a9-cf8f145ba3c7",
+        "status": "A",
+        "position": "IF",
+        "primary_position": "SS",
+        "first_name": "Timothy",
+        "last_name": "Anderson",
+        "preferred_name": "Tim",
+        "jersey_number": "7",
+        "transactions": [{
+            "id": "df819009-7284-4474-bfd9-2fdc90bc7a41",
+            "desc": "The Chicago White Sox activated INF Tim Anderson from the 10-day injured list.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:48:02+00:00",
+            "transaction_type": "Activated",
+            "transaction_code": "ACT",
+            "from_team": {
+                "name": "White Sox",
+                "market": "Chicago",
+                "abbr": "CWS",
+                "id": "47f490cd-2f58-4ef7-9dfd-2ad6ba6c1ae8"
+            },
+            "to_team": {
+                "name": "White Sox",
+                "market": "Chicago",
+                "abbr": "CWS",
+                "id": "47f490cd-2f58-4ef7-9dfd-2ad6ba6c1ae8"
+            }
+        }]
+    }, {
+        "id": "49812b41-643c-4356-b6eb-ffd29df4f653",
+        "status": "A",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Joe",
+        "last_name": "Jiménez",
+        "preferred_name": "Joe",
+        "jersey_number": "77",
+        "transactions": [{
+            "id": "e9757f01-484c-4cf8-ac67-faec25f589f0",
+            "desc": "The Detroit Tigers recalled RHP Joe Jiménez from the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T21:02:22+00:00",
+            "transaction_type": "Recalled from Minors",
+            "transaction_code": "REC",
+            "from_team": {
+                "name": "Tigers",
+                "market": "Detroit",
+                "abbr": "DET",
+                "id": "575c19b7-4052-41c2-9f0a-1c5813d02f99"
+            },
+            "to_team": {
+                "name": "Tigers",
+                "market": "Detroit",
+                "abbr": "DET",
+                "id": "575c19b7-4052-41c2-9f0a-1c5813d02f99"
+            }
+        }]
+    }, {
+        "id": "2e4e94fc-76a7-4f29-8a31-e98f3849818d",
+        "status": "MIN",
+        "position": "OF",
+        "primary_position": "LF",
+        "first_name": "Alexander",
+        "last_name": "Kirilloff",
+        "preferred_name": "Alex",
+        "jersey_number": "19",
+        "transactions": [{
+            "id": "ed17b15d-40f5-45ed-928c-b6d26099d54f",
+            "desc": "The Minnesota Twins optioned OF Alex Kirilloff to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:02:50+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            },
+            "to_team": {
+                "name": "Twins",
+                "market": "Minnesota",
+                "abbr": "MIN",
+                "id": "aa34e0ed-f342-4ec6-b774-c79b47b60e2d"
+            }
+        }]
+    }, {
+        "id": "8984b351-e602-475d-b6eb-eabc38470ba7",
+        "status": "MIN",
+        "position": "P",
+        "primary_position": "RP",
+        "first_name": "Eduard",
+        "last_name": "Bazardo",
+        "preferred_name": "Eduard",
+        "jersey_number": "83",
+        "transactions": [{
+            "id": "fd1003f4-c98d-4b0f-ad14-fd23a5351ab8",
+            "desc": "The Boston Red Sox optioned RHP Eduard Bazardo to the minors.",
+            "effective_date": "2021-04-15",
+            "last_modified": "2021-04-15T14:07:23+00:00",
+            "transaction_type": "Assigned to Minors",
+            "transaction_code": "MIN",
+            "from_team": {
+                "name": "Red Sox",
+                "market": "Boston",
+                "abbr": "BOS",
+                "id": "93941372-eb4c-4c40-aced-fe3267174393"
+            },
+            "to_team": {
+                "name": "Red Sox",
+                "market": "Boston",
+                "abbr": "BOS",
+                "id": "93941372-eb4c-4c40-aced-fe3267174393"
+            }
+        }]
+    }],
+    "_comment": "Generation started @ 2022-07-06 19:38:43 UTC ended @ 2022-07-06 19:38:43 UTC"
+}

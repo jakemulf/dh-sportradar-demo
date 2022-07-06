@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   server:
-    image: ghcr.io/deephaven/server:0.14.0
+    build: .
     expose:
       - '8080'
     volumes:
@@ -13,6 +13,7 @@ services:
       - TOPIC_NAME=${TOPIC_NAME}
       - KAFKA_SERVER=${KAFKA_SERVER}
       - REDPANDA_SERVER=${REDPANDA_SERVER}
+      - SPORT_RADAR_API_KEY=${SPORT_RADAR_API_KEY}
 
   web:
     image: ghcr.io/deephaven/web:0.14.0

@@ -3,12 +3,9 @@ import deephaven.dtypes as dht
 
 import json
 
-def extract_sport_radar_json_lists(d, response_dictionary=None, parent_keys=None):
+def extract_sport_radar_json(d, response_dictionary=None, parent_keys=None):
     """
-    An attempt to extract lists in the SportRadar API JSON response into useable Deephaven tables.
-    The rules are as follows:
-        1) Non list items are dumped into a general meta table
-        2) List items are dumped into their own JSON tables
+    Extracts data from a SportRadar API JSON response into Deephaven tables
 
     Parameters:
         d (dict): The SportRadar API JSON response as a Python dictionary
@@ -33,7 +30,7 @@ def extract_sport_radar_json_lists(d, response_dictionary=None, parent_keys=None
     for key in d.keys():
         #If dictionary, simply recurse with the new key appended to parent_keys
         if isinstance(d[key], dict):
-            extract_sport_radar_json_lists(d[key], response_dictionary, parent_keys + [key])
+            extract_sport_radar_json(d[key], response_dictionary, parent_keys + [key])
 
         #If list, create a new table
         elif isinstance(d[key], list):

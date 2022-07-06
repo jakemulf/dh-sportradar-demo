@@ -11,9 +11,11 @@ This sample app shows how to collect data from https://developer.sportradar.com/
 * `./data/sample_json/`: Sample JSON files from the SportRadar API to work with without making API requests
 * `./data/notebooks/`: Various Python scripts to work more with the data from SportRadar
 * `./flask_server/`: The Python project to run the server to accept the SportRadar webhooks
-  * `./flask_server/requirements.txt`: The Python dependencies for the project
+  * `./flask_server/requirements.txt`: The Python dependencies for the flask server
   * `./flask_server/server.py`: The Python Flask server
 * `./docker-compose.yml`: The docker-compose file for the project
+* `Dockerfile`: The custom Dockerfile that extends the Deephaven base image
+* `requirements.txt`: The Python dependencies for the Deephaven project
 
 ## Environmental variables
 
@@ -23,9 +25,10 @@ The following environmental variables need to be set for the project. `.env` is 
 TOPIC_NAME
 KAFKA_SERVER
 REDPANDA_SERVER
+SPORT_RADAR_API_KEY
 ```
 
-It's recommended to use the values in `.env_sample`. You can default to use these values by running `cp .env_sample .env`
+It's recommended to start with the values in `.env_sample`. You can use these values by running `cp .env_sample .env`, then manually edit the file to add the `SPORT_RADAR_API_KEY` value.
 
 ## Launch
 

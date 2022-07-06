@@ -6,8 +6,10 @@ This sample app shows how to collect data from https://developer.sportradar.com/
 
 * `./data/app.d/`: The Deephaven app mode directory
   * `./data/app.d/webhook_feed.py`: The Python script to setup the webhook feed
+  * `./data/app.d/historical_data_feed.py`: The Python script to setup pulling and parsing historical data
   * `./data/app.d/app.app`: The Deephaven app mode config file
-* `./data/notebooks/`: Various Python scripts to collect data from SportRadar
+* `./data/sample_json/`: Sample JSON files from the SportRadar API to work with without making API requests
+* `./data/notebooks/`: Various Python scripts to work more with the data from SportRadar
 * `./flask_server/`: The Python project to run the server to accept the SportRadar webhooks
   * `./flask_server/requirements.txt`: The Python dependencies for the project
   * `./flask_server/server.py`: The Python Flask server
@@ -23,13 +25,7 @@ KAFKA_SERVER
 REDPANDA_SERVER
 ```
 
-It's recommended to use the values in `.env_sample`
-
-```
-TOPIC_NAME="test.topic"
-KAFKA_SERVER="localhost:9092"
-REDPANDA_SERVER="redpanda:29092"
-```
+It's recommended to use the values in `.env_sample`. You can default to use these values by running `cp .env_sample .env`
 
 ## Launch
 
@@ -66,3 +62,5 @@ TODO
 This app runs Python scripts in Deephaven that set up tables to collect data from https://developer.sportradar.com/. On launch, the `webhook_table` is created and contains streaming data from the SportRadar webhooks. This data comes from a Kafka feed that the Flask server writes to. The Python scripts in the `./data/notebooks/` directory can be used to pull data from the SportRadar API and create various Deephaven artifacts using the data.
 
 The Python Flask server contains a single route that accepts a JSON request body, and writes it to the Kafka feed that the `webhook_table` reads from.
+
+The historical data parser turns JSON responses from SportRadar into Deephaven tables. Meta data is written to its own table, and any sub lists found are turned into their own JSON tables.

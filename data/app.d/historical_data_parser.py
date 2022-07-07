@@ -37,12 +37,24 @@ def extract_sport_radar_json(d, response_dictionary=None, parent_keys=None):
             dtw_columns = {
                 "Value": dht.string
             }
+            #If the items in the list are dictionaries, add columns to write
+            #NOTE: This is assuming that the items in the list all have the same schema
+            if isinstance(d[key][0], dict):
+                for list_key in d[key][0].keys():
+                    dtw_columns[list_key] = dht.string #potential TODO: Write other types?
             dtw = DynamicTableWriter(dtw_columns)
 
             rd_key = "_".join(parent_keys + [key])
             response_dictionary[rd_key] = dtw
-            for row in d[key]:
-                dtw.write_row([json.dumps(row)])
+            for list_item in d[key]:
+                row_to_write = [json.dumps(list_item)]
+                for list_key in dtw_columns.keys(): #Python 3.7: Dicts are ordered, so this will match the DTW columns
+                    if list_key != "Value":
+                        if list_key in list_item: #Sanity check in case schemas differ
+                            row_to_write.append(str(list_item[list_key]))
+                        else:
+                            row_to_write.append("")
+                dtw.write_row(row_to_write)
 
         #If primitive, append it to the meta table
         else:

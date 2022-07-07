@@ -5,9 +5,18 @@ table_writers = extract_sport_radar_json(d)
 for key in table_writers.keys():
     globals()[f"daily_change_log_{key}"] = table_writers[key].table
 
-#NOTE: This section takes a while to run. If you want a quick demo, feel free to omit this section
-with open("/data/sample_json/league_leaders.json", "r") as f:
+with open("/data/sample_json/transactions.json", "r") as f:
     d = json.loads(f.read())
 table_writers = extract_sport_radar_json(d)
 for key in table_writers.keys():
-    globals()[f"league_leaders_{key}"] = table_writers[key].table
+    globals()[f"transactions_{key}"] = table_writers[key].table
+
+#NOTE: This section takes a while to run, which is why it doesn't run by default. You can
+#change run_long_section to True to run it
+run_long_section = False
+if run_long_section:
+    with open("/data/sample_json/league_leaders.json", "r") as f:
+        d = json.loads(f.read())
+    table_writers = extract_sport_radar_json(d)
+    for key in table_writers.keys():
+        globals()[f"league_leaders_{key}"] = table_writers[key].table

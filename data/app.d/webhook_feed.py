@@ -14,5 +14,5 @@ except KeyError:
     sys.exit("Please set the proper environmental variables defined in the README")
 
 webhook_table = kt.consume({'bootstrap.servers': REDPANDA_SERVER},
-                        'test.topic', table_type=kt.TableType.append(),
+                        TOPIC_NAME, table_type=kt.TableType.append(),
                         key_spec=kt.KeyValueSpec.IGNORE)

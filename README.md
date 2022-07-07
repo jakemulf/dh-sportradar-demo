@@ -32,21 +32,21 @@ It's recommended to start with the values in `.env_sample`. You can use these va
 
 ## Launch
 
-Before launching, it's recommended to setup a Python virtual environment. Run the following in your terminal to setup the virtual environment
+Before launching, it's recommended to setup a Python virtual environment. Run the following in your terminal to setup the virtual environment:
 
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-If `python` already points to some 3.X version of python, use the following
+If `python` already points to some 3.X version of python, use the following:
 
 ```
 python -m venv venv
 source venv/bin/activate
 ```
 
-To launch the app, run the following in your terminal
+To launch the app, run the following in your terminal:
 
 ```
 docker-compose up -d
@@ -54,11 +54,17 @@ pip install -r ./flask_server/requirements.txt
 python ./flask_server/server.py
 ```
 
-To stop the app, you can kill the Python command using `ctrl-c`, and then run `docker-compose stop`
+To stop the app, you can kill the Python command using `ctrl-c`, and then run `docker-compose stop`.
 
 ## SportRadar configuration
 
-TODO
+Start off by going to https://developer.sportradar.com/ and click `Register`. Fill out the forum, and then activate your account with the confirmation email.
+
+Once you can log in, go back to https://developer.sportradar.com/ and go to `My Account`, and then `Applications`. On this page, give your application a name, and then select the key(s) for the various services you want to use.
+
+Once you get your application created, save your key in the `.env` file.
+
+If you want to use multiple application keys, add more entries in the `.env` file and the `docker-compose.yml` file.
 
 ## Using the app
 

@@ -1,64 +1,74 @@
 from deephaven import DynamicTableWriter
 import deephaven.dtypes as dht
 
-import json
-
-def extract_sport_radar_json(d, response_dictionary=None, parent_keys=None):
+def extract_sport_radar_json(json_response, keys=None, dtw=None):
     """
-    Extracts data from a SportRadar API JSON response into Deephaven tables
+    Extracts primitive data from a SportRadar API JSON response into Deephaven tables
 
     Parameters:
-        d (dict): The SportRadar API JSON response as a Python dictionary
-        response_dictionary (dict): The response_dictionary used to store info for recursive calls
-        parent_keys (list<str>): The JSON keys that led to the current dictionary in recursive calls
+        json_response (dict|list|any): The SportRadar API JSON response as a Python dictionary, list, or other value
+        keys (list<str>): A list of strings representing the previous keys that got to the current d
+        dtw (DynamicTableWriter): The DynamicTableWriter for the table
     Returns:
-        dict<str, DynamicTableWriter>: Key value pairs that map to Deephaven table writers
+        Table: The table containing all the data
     """
-    if response_dictionary is None:
+    if dtw is None:
         dtw_columns = {
             "Key": dht.string,
             "Value": dht.string
         }
         dtw = DynamicTableWriter(dtw_columns)
+    if keys is None:
+        keys = []
 
-        response_dictionary = {}
-        response_dictionary["meta"] = dtw
+    if isinstance(json_response, dict):
+        for key in json_response.keys():
+            extract_sport_radar_json(json_response[key], keys=keys+[key], dtw=dtw)
+    elif isinstance(json_response, list):
+        for i in range(len(json_response)):
+            extract_sport_radar_json(json_response[i], keys=keys+[str(i)], dtw=dtw)
+    else:
+        dtw.write_row("_".join(keys), str(json_response))
 
-    if parent_keys is None:
-        parent_keys = []
+    return dtw.table
 
-    for key in d.keys():
-        #If dictionary, simply recurse with the new key appended to parent_keys
-        if isinstance(d[key], dict):
-            extract_sport_radar_json(d[key], response_dictionary, parent_keys + [key])
+"""
+Work in progress
+def extract_sport_radar_json_two(json_response, keys=None, dict_tables=None):
+    if dict_tables is None:
+        dict_tables = {}
+    if keys is None:
+        keys = []
 
-        #If list, create a new table
-        elif isinstance(d[key], list):
-            dtw_columns = {
-                "Value": dht.string
-            }
-            #If the items in the list are dictionaries, add columns to write
-            #NOTE: This is assuming that the items in the list all have the same schema
-            if isinstance(d[key][0], dict):
-                for list_key in d[key][0].keys():
-                    dtw_columns[list_key] = dht.string #potential TODO: Write other types?
-            dtw = DynamicTableWriter(dtw_columns)
-
-            rd_key = "_".join(parent_keys + [key])
-            response_dictionary[rd_key] = dtw
-            for list_item in d[key]:
-                row_to_write = [json.dumps(list_item)]
-                for list_key in dtw_columns.keys(): #Python 3.7: Dicts are ordered, so this will match the DTW columns
-                    if list_key != "Value":
-                        if list_key in list_item: #Sanity check in case schemas differ
-                            row_to_write.append(str(list_item[list_key]))
-                        else:
-                            row_to_write.append("")
-                dtw.write_row(row_to_write)
-
-        #If primitive, append it to the meta table
+    if isinstance(json_response, dict):
+        for key in json_response.keys():
+            extract_sport_radar_json_two(json_response[key], keys=keys+[key], dict_tables=dict_tables)
+    elif isinstance(json_response, list):
+        for i in range(len(json_response)):
+            extract_sport_radar_json_two(json_response[i], keys=keys+[int(i)], dict_tables=dict_tables)
+    else:
+        is_list = len(keys) >= 2 and isinstance(keys[-2], int)
+        if is_list:
+            dict_tables_key = tuple(keys[0:-2])
         else:
-            meta_key = "_".join(parent_keys + [key])
-            response_dictionary["meta"].write_row((meta_key, json.dumps(d[key])))
+            dict_tables_key = tuple(keys[0:-1])
+        if len(dict_tables_key) == 0:
+            dict_tables_key = "meta"
 
-    return response_dictionary
+        if not dict_tables_key in dict_tables:
+            if is_list:
+                dict_tables[dict_tables_key] = []
+            else:
+                dict_tables[dict_tables_key] = {}
+
+        if is_list:
+            list_index = keys[-2]
+            if len(dict_tables[dict_tables_key]) <= list_index:
+                dict_tables[dict_tables_key].append([])
+            dict_tables[dict_tables_key][list_index].append(str(json_response))
+        else:
+            last_key = keys[-1]
+            dict_tables[dict_tables_key][last_key] = str(json_response)
+
+    return dict_tables
+"""

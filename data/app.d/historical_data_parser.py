@@ -34,22 +34,30 @@ def extract_sport_radar_json(d, response_dictionary=None, parent_keys=None):
 
         #If list, create a new table
         elif isinstance(d[key], list):
-            dtw_columns = {
-                "Value": dht.string
-            }
+            is_primitives = True
+            dtw_columns = {}
             #If the items in the list are dictionaries, add columns to write
-            #NOTE: This is assuming that the items in the list all have the same schema
+            #Since the API doesn't include nulls, we have to loop through all of the items
+            #to get the proper schema
             if isinstance(d[key][0], dict):
-                for list_key in d[key][0].keys():
-                    dtw_columns[list_key] = dht.string #potential TODO: Write other types?
+                is_primitives = False
+                for i in range(len(d[key])):
+                    for list_key in d[key][i].keys():
+                        dtw_columns[list_key] = dht.string #potential TODO: Write other types?
+            else:
+                dtw_columns = {
+                    "Value": dht.string
+                }
             dtw = DynamicTableWriter(dtw_columns)
 
             rd_key = "_".join(parent_keys + [key])
             response_dictionary[rd_key] = dtw
             for list_item in d[key]:
-                row_to_write = [json.dumps(list_item)]
-                for list_key in dtw_columns.keys(): #Python 3.7: Dicts are ordered, so this will match the DTW columns
-                    if list_key != "Value":
+                if is_primitives:
+                    row_to_write = [json.dumps(list_item)]
+                else:
+                    row_to_write = []
+                    for list_key in dtw_columns.keys(): #Python 3.7: Dicts are ordered, so this will match the DTW columns
                         if list_key in list_item: #Sanity check in case schemas differ
                             row_to_write.append(str(list_item[list_key]))
                         else:

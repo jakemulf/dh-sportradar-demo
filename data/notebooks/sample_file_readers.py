@@ -14,7 +14,7 @@ for key in table_writers.keys():
 d = None
 with open("/data/sample_json/play_by_play.json", "r") as f:
     d = json.loads(f.read())
-table_writers = extract_sport_radar_json(d)
+table_writers = extract_sport_radar_json(d, datetime_converter=datetime_converter)
 for key in table_writers.keys():
     globals()[f"play_by_play_{key}"] = table_writers[key].create_table()
 

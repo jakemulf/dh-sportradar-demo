@@ -1,7 +1,23 @@
 from deephaven import DynamicTableWriter
 import deephaven.dtypes as dht
+from deephaven.time import to_datetime
+from dateutil import parser
 
 import json
+import re
+
+def sportradar_datetime_converter(datetime_str):
+    match = re.match(r'(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})', datetime_str)
+
+    if not bool(match):
+        return None
+
+    try:
+        dt = parser.parse(datetime_str)
+        dts = dt.strftime("%Y-%m-%dT%H:%M:%S") + " UTC"
+        return to_datetime(dts)
+    except:
+        return None
 
 class MissingNullsJsonWriter:
     """
@@ -126,7 +142,7 @@ def flatten_dict(d, key_prefix=None):
 
     return flattened_d
 
-def extract_sport_radar_json(d, response_dictionary=None, parent_keys=None, table_to_write=None, datetime_converter=None):
+def extract_sport_radar_json(d, response_dictionary=None, parent_keys=None, table_to_write=None, datetime_converter=sportradar_datetime_converter):
     """
     Extracts data from a SportRadar API JSON response into Deephaven tables
 

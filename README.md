@@ -32,7 +32,23 @@ It's recommended to start with the values in `.env_sample`. You can use these va
 
 ## Launch
 
-Before launching, it's recommended to setup a Python virtual environment. Run the following in your terminal to setup the virtual environment:
+### Deephaven
+
+To launch the Deephaven app, run the following in your terminal:
+
+```
+docker-compose up -d
+```
+
+To stop the Deephaven app, run the following:
+
+```
+docker-compose stop
+```
+
+### Python Flask server
+
+Before launching the Python Flask server, it's recommended to setup a Python virtual environment. Run the following in your terminal to setup the virtual environment:
 
 ```
 python3 -m venv venv
@@ -46,15 +62,14 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-To launch the app, run the following in your terminal:
+To launch the Python flask server, run the following in your terminal:
 
 ```
-docker-compose up -d
 pip install -r ./flask_server/requirements.txt
 python ./flask_server/server.py
 ```
 
-To stop the app, you can kill the Python command using `ctrl-c`, and then run `docker-compose stop`.
+To stop the app, you can kill the Python command using `ctrl-c`.
 
 ## SportRadar configuration
 
@@ -68,8 +83,8 @@ If you want to use multiple application keys, add more entries in the `.env` fil
 
 ## Using the app
 
-This app runs Python scripts in Deephaven that set up tables to collect data from https://developer.sportradar.com/. On launch, the `webhook_table` is created and contains streaming data from the SportRadar webhooks. This data comes from a Kafka feed that the Flask server writes to. The Python scripts in the `./data/notebooks/` directory can be used to pull data from the SportRadar API and create various Deephaven artifacts using the data.
+This app runs Python scripts in Deephaven that set up tables to collect data from https://developer.sportradar.com/. On launch, the `webhook_table` is created and contains streaming data from the SportRadar webhooks. This data comes from a Kafka feed that the Flask server writes to.
 
 The Python Flask server contains a single route that accepts a JSON request body, and writes it to the Kafka feed that the `webhook_table` reads from.
 
-The historical data parser turns JSON responses from SportRadar into Deephaven tables. Meta data is written to its own table, and any sub lists found are turned into their own JSON tables.
+The Deephaven Application Mode scripts define a method called `extract_sport_radar_json` that takes a JSON response from the SportRadar API and turns it into Deephaven tables. The Python scripts in the `./data/notebooks/` directory show how to use this method. You can use these tables to create various Deephaven artifacts (such as plots) using the data.
